@@ -45,6 +45,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>90DA3AF4-9B32-4508-AA4D-C12BDD23DD10</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>88B5C4D0-7D07-472B-8D6C-23E0B46FDD49</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>B69B5435-E669-484E-9DD3-E58C9A06C671</key>
 		<array>
 			<dict>
@@ -505,6 +518,54 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>5</integer>
+				<key>hotmod</key>
+				<integer>1310720</integer>
+				<key>hotstring</key>
+				<string>G</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>90DA3AF4-9B32-4508-AA4D-C12BDD23DD10</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>~/Applications/Chrome Apps.localized/GitHub.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>88B5C4D0-7D07-472B-8D6C-23E0B46FDD49</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -572,6 +633,20 @@
 			<real>95</real>
 			<key>ypos</key>
 			<real>470</real>
+		</dict>
+		<key>88B5C4D0-7D07-472B-8D6C-23E0B46FDD49</key>
+		<dict>
+			<key>xpos</key>
+			<real>260</real>
+			<key>ypos</key>
+			<real>935</real>
+		</dict>
+		<key>90DA3AF4-9B32-4508-AA4D-C12BDD23DD10</key>
+		<dict>
+			<key>xpos</key>
+			<real>95</real>
+			<key>ypos</key>
+			<real>935</real>
 		</dict>
 		<key>B69B5435-E669-484E-9DD3-E58C9A06C671</key>
 		<dict>

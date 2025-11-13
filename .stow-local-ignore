@@ -4,6 +4,9 @@ install
 # Alfred-Sync-Ordner, wird von Alfred selbst verwaltet
 alfred-sync
 
+# Vorlagen Ordner
+Vorlagen
+
 # (Optional) Git-Ordner und diese Datei selbst
 .git
 .stow-local-ignore
