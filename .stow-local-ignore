@@ -1,0 +1,10 @@
+# Skript-Ordner, nicht verlinken
+install
+
+# Alfred-Sync-Ordner, wird von Alfred selbst verwaltet
+alfred-sync
+
+# (Optional) Git-Ordner und diese Datei selbst
+.git
+.stow-local-ignore
+.DS_Store

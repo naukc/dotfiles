@@ -1,0 +1,64 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 5,
+      "subtext" : {
+        "size" : 12,
+        "colorSelected" : "#ABFFAEFF",
+        "font" : "System",
+        "color" : "#ABFFAE68"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#F8483AFF",
+        "font" : "System",
+        "color" : "#FFBF3AFF"
+      },
+      "backgroundSelected" : "#2C2C32FF",
+      "text" : {
+        "size" : 18,
+        "colorSelected" : "#FF2F2AFF",
+        "font" : "System",
+        "color" : "#7EFAFFC2"
+      },
+      "iconPaddingHorizontal" : 4,
+      "roundness" : 12,
+      "paddingVertical" : 9,
+      "iconSize" : 40
+    },
+    "search" : {
+      "backgroundSelected" : "#FF2F2AE4",
+      "paddingHorizontal" : 8,
+      "spacing" : 8,
+      "text" : {
+        "size" : 42,
+        "colorSelected" : "#FFBF3AFF",
+        "font" : "System Light",
+        "color" : "#FFBF3AFF"
+      },
+      "background" : "#2020201A",
+      "roundness" : 0,
+      "paddingVertical" : 5
+    },
+    "window" : {
+      "color" : "#252525FF",
+      "paddingHorizontal" : 13,
+      "width" : 559,
+      "borderPadding" : 0,
+      "borderColor" : "#0000007F",
+      "blur" : 0,
+      "roundness" : 11,
+      "paddingVertical" : 8
+    },
+    "credit" : "Benjuhmin",
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#FFC257FF",
+      "thickness" : 0
+    },
+    "name" : "Gruvbox Improved"
+  }
+}

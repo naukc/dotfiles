@@ -18,8 +18,8 @@ PACKAGES=(
   gh
 )
 CASKS=(
-  iterm2 visual-studio-code alfred obsidian
-  spotify discord google-chrome vlc todoist
+  visual-studio-code alfred obsidian
+  discord google-chrome vlc todoist
 )
 FONTS=(
   font-jetbrains-mono-nerd-font
