@@ -11,3 +11,4 @@ Vorlagen
 .git
 .stow-local-ignore
 .DS_Store
+.gitignore
