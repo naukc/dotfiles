@@ -1,0 +1,4 @@
+gui:
+  theme:
+    # Verwende das eingebaute Catppuccino Mocha Theme
+    name: catppuccin-mocha
