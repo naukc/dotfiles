@@ -1,0 +1,18 @@
+# macOS / Finder
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# macOS / Thumbnails
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Backup-Dateien von Editoren
+*~
+*.swp
+*.swo
+
