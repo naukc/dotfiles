@@ -1,0 +1,20 @@
+/Dein_Projekt_Name
+│
+├── .gitignore             # Sagt Git, was ignoriert werden soll
+├── main.tex               # Die Hauptdatei (hier läuft alles zusammen)
+├── literatur.bib          # Deine Literaturquellen (z.B. aus Zotero)
+│
+├── /kapitel               # Hier liegt dein eigentlicher Text
+│   ├── 01_einleitung.tex
+│   ├── 02_grundlagen.tex
+│   ├── 03_analyse.tex
+│   ├── 04_fazit.tex
+│   └── 99_anhang.tex
+│
+├── /abbildungen           # Alle Bilder, Grafiken und Diagramme
+│   ├── logo_uni.png
+│   └── diagramm_messung.pdf
+│
+└── /einstellungen         # (Optional) Ausgelagerte Formatierungen
+    ├── pakete.tex         # \usepackage{...} Befehle
+    └── befehle.tex        # Eigene Definitionen

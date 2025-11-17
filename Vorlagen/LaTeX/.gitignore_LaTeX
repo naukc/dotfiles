@@ -1,0 +1,48 @@
+# --- LaTeX Build-Dateien (Müll) ---
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.doctest
+*.dvi
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+*.xdy
+
+# --- PDF Dateien ---
+# Standardmäßig ignoriert man PDFs, da sie das Ergebnis sind (Build Artifact).
+# Wenn du willst, dass dein PDF im Repo gespeichert wird (z.B. um es am Handy zu lesen),
+# setze ein # vor die nächste Zeile:
+# *.pdf
+
+# --- macOS Systemdateien ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# --- VS Code Einstellungen ---
+.vscode/
+*.code-workspace
+
+# --- LaTeX Workshop Extension ---
+# Ignoriert den Ordner, in dem die Extension manchmal temporäre Dateien ablegt
+/out/
