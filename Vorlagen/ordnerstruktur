@@ -1,0 +1,10 @@
+Kontaktliste/
+├── CMakeLists.txt
+├── build/                <-- Dein Build-Ordner (bleibt so)
+├── include/              <-- Nur Header-Dateien (Das "Was")
+│   └── kontaktliste.h
+├── src/                  <-- Die Implementierung (Das "Wie")
+│   ├── kontaktliste.c
+│   ├── kontakt_io.c
+│   └── menu.c
+└── main.c                <-- Der Einstiegspunkt (bleibt oft im Root oder auch in src)
