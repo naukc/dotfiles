@@ -157,35 +157,35 @@ alias lg='eza -al --git --icons' # Mit Git-Status
 alias t='tmux attach-session -t main || tmux new-session -s main'
 
 # -----------------------------------------------------------------
-# Alias/Funktion für Neovim (nv) mit fzf-Suche
+# Neovim (nv) - Native Zsh Methode
 # -----------------------------------------------------------------
 nv() {
-  local files
-  # Finde alle Dateien (fd) und leite sie an fzf weiter
-  # --multi: Erlaube Mehrfachauswahl mit Tab
-  # --preview: Zeige bat-Vorschau
-  # Wir nutzen 'find' statt 'fd' für den Fall, dass fd nicht da ist,
-  # aber da du fd hast, könnten wir auch 'fd --type f' nehmen.
-  files=$(fd --type f --hidden --exclude .git | fzf --multi --preview "bat --color=always {}")
+  # 1. Dateien auswählen und in einer Variable speichern
+  # Wir nutzen KEINE Pipe direkt in nvim.
+  local selections=$(fd --type f --hidden --exclude .git | fzf --multi --preview "bat --color=always {}")
 
-  # Wenn 'files' nicht leer ist (d.h. du hast Enter gedrückt)
-  if [[ -n "$files" ]]; then
-    # Öffne alle ausgewählten Dateien in nvim
-    # 'tr' wandelt die Zeilenumbrüche von fzf in Leerzeichen um
-    echo "$files" | tr '\n' ' ' | xargs nvim
+  # 2. Prüfen, ob etwas ausgewählt wurde (String nicht leer)
+  if [[ -n "$selections" ]]; then
+    # 3. Zsh Magie: (@f) splittet den String an Newlines in ein echtes Array
+    # Die Anführungszeichen schützen Leerzeichen innerhalb der Dateinamen.
+    local files=("${(@f)selections}")
+
+    # 4. Editor ganz normal starten und Array übergeben
+    nvim "${files[@]}"
   fi
 }
 
 # -----------------------------------------------------------------
-# Alias/Funktion für VS Code (co) mit fzf-Suche
+# VS Code (co) - Native Zsh Methode
 # -----------------------------------------------------------------
 co() {
-  local files
-  # Derselbe fzf-Befehl
-  files=$(fd --type f --hidden --exclude .git | fzf --multi --preview "bat --color=always {}")
+  local selections=$(fd --type f --hidden --exclude .git | fzf --multi --preview "bat --color=always {}")
 
-  if [[ -n "$files" ]]; then
-    # Öffne alle ausgewählten Dateien in VS Code
-    echo "$files" | tr '\n' ' ' | xargs code
+  if [[ -n "$selections" ]]; then
+    # Selbe Logik: String -> Array
+    local files=("${(@f)selections}")
+
+    # VS Code öffnen
+    code "${files[@]}"
   fi
 }

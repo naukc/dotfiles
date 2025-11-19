@@ -14,3 +14,6 @@ add_executable(
 # 2. Dem Compiler sagen, wo die Header liegen
 # PRIVATE bedeutet: Nur dieses Target braucht den Include-Pfad
 target_include_directories(App PRIVATE include)
+
+# Setzt den Output-Namen auf "KontaktManager"
+set_target_properties(App PROPERTIES OUTPUT_NAME "KontaktManager")
