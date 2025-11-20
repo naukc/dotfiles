@@ -189,3 +189,6 @@ co() {
     code "${files[@]}"
   fi
 }
+
+# Erzwinge Block-Cursor beim Start
+echo -e "\e[2 q"
