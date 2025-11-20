@@ -1,0 +1,16 @@
+# ~/.config/ghostty/config
+
+# --- Schriftart ---
+# Stelle sicher, dass der Font exakt so im System heißt
+font-family = "JetBrainsMono Nerd Font"
+font-size = 20
+
+# --- Theme ---
+# Versuche diese exakte Schreibweise (Groß-/Kleinschreibung beachten!)
+theme = Catppuccin Mocha
+
+# --- Fenster ---
+# Optional: Titelleiste ausblenden (für den cleanen Look)
+window-decoration = false
+# Optional: Mac-Style Tabs
+macos-titlebar-style = tabs
