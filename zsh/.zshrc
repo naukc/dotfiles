@@ -192,3 +192,6 @@ co() {
 
 # Erzwinge Block-Cursor beim Start
 echo -e "\e[2 q"
+
+# Vim-Bewegungen in der Kommandozeile aktivieren (Vi-Modus)
+bindkey -v

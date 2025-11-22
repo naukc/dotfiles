@@ -11,7 +11,7 @@ font-feature = liga
 theme = Catppuccin Mocha
 
 # --- Fenster ---
-window-decoration = true
+window-decoration = false
 macos-titlebar-style = tabs
 maximize = true
 # Transparenz & Blur
@@ -68,3 +68,6 @@ keybind = super+shift+l=next_tab
 # 4. Sonstiges
 keybind = super+shift+r=reload_config
 keybind = super+enter=toggle_fullscreen
+
+# Erzwingt, dass Option+L das Zeichen '@' schreibt
+keybind = alt+l=text:@
