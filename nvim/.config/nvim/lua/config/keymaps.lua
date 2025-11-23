@@ -1,9 +1,11 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
--- Keymap für schnelles Verlassen des Insert Mode
-vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit Insert Mode with jj" })
+-- Leader Key auf Space setzen (WICHTIG!)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- Sorgt dafür, dass nach der Suche das Ergebnis zentriert wird (wie zz)
-vim.keymap.set("n", "n", "nzz", { desc = "Next search match and center" })
-vim.keymap.set("n", "N", "Nzz", { desc = "Previous search match and center" })
+-- Deine Keymaps
+vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit Insert Mode" })
+vim.keymap.set("n", "n", "nzz", { desc = "Next search match centered" })
+vim.keymap.set("n", "N", "Nzz", { desc = "Prev search match centered" })
+
+-- Schnell speichern
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file" })
