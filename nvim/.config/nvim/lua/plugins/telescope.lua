@@ -49,5 +49,8 @@ return {
     
     -- 5. In aktueller Datei suchen -> Space + /
     vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = '[/] Fuzzily search in current buffer' })
+
+    -- 6. Keymaps suchen -> Space + sk (Search Keymaps)
+    vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
   end,
 }
