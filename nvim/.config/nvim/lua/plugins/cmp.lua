@@ -18,10 +18,16 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
 		"rafamadriz/friendly-snippets",
+
+		-- WICHTIG: Abhängigkeit zu Autopairs hinzufügen
+		"windwp/nvim-autopairs",
 	},
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
+
+		-- Autopairs Integration laden
+		local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 		require("luasnip.loaders.from_vscode").lazy_load()
 		luasnip.config.setup({})
@@ -41,7 +47,7 @@ return {
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-y>"] = cmp.mapping.confirm({ select = true }),
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
-				["<C-Space>"] = cmp.mapping.complete(), -- Manuell erzwingen mit Strg+Space
+				["<C-Space>"] = cmp.mapping.complete(),
 
 				["<C-l>"] = cmp.mapping(function()
 					if luasnip.expand_or_locally_jumpable() then
@@ -55,20 +61,15 @@ return {
 				end, { "i", "s" }),
 			}),
 
-			-- HIER SIND DIE EINSTELLUNGEN FÜR DIE MINDESTLÄNGE:
 			sources = {
-				{
-					name = "nvim_lsp",
-					keyword_length = 2, -- Erst ab 2 Buchstaben vorschlagen
-				},
-				{
-					name = "luasnip",
-					keyword_length = 2,
-				},
-				{
-					name = "path", -- Pfade lassen wir oft bei 1, damit '/' sofort Vorschläge bringt
-				},
+				{ name = "nvim_lsp", keyword_length = 2 },
+				{ name = "luasnip", keyword_length = 2 },
+				{ name = "path" },
 			},
 		})
+
+		-- HIER IST DIE MAGIE:
+		-- Wenn Autocomplete fertig ist ("confirm_done"), füge Klammern hinzu
+		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 	end,
 }

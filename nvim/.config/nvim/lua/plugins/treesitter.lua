@@ -1,34 +1,32 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate", -- Wichtig: Führt Updates nach der Installation aus
-  config = function()
-    require("nvim-treesitter.configs").setup({
-      -- Deine gewünschte Liste (+ vim/vimdoc für die Config selbst)
-      ensure_installed = { 
-        "c", 
-        "cpp", 
-        "javascript", 
-        "python", 
-        "lua", 
-        "markdown", 
-        "markdown_inline", -- Wichtig für Code-Blöcke in Markdown
-        "vim",             -- Für Vimscript
-        "vimdoc",          -- Für die Hilfeseiten
-        "query"            -- Für Treesitter-Queries
-      },
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
+	config = function()
+		require("nvim-treesitter.configs").setup({
+			ensure_installed = {
+				"c",
+				"cpp",
+				"javascript",
+				"python",
+				"lua",
+				"markdown",
+				"markdown_inline",
+				"vim",
+				"vimdoc",
+				"query",
+				"bash", -- nützlich
+			},
 
-      -- Fehlende Parser automatisch installieren, wenn du eine Datei öffnest
-      auto_install = true,
+			-- HIER IST DER FIX:
+			-- Auf 'false' setzen, um den CLI-Fehler zu vermeiden.
+			-- Die Parser oben in der Liste werden trotzdem installiert.
+			auto_install = false,
 
-      -- Das eigentliche Highlight-Modul aktivieren
-      highlight = {
-        enable = true,
-        -- Standard-Vim-Highlighting für diese Dinge deaktivieren (Treesitter ist besser)
-        additional_vim_regex_highlighting = false,
-      },
-
-      -- Intelligentes Einrücken basierend auf Code-Struktur (experimentell, aber meistens gut)
-      indent = { enable = true },
-    })
-  end,
+			highlight = {
+				enable = true,
+				additional_vim_regex_highlighting = false,
+			},
+			indent = { enable = true },
+		})
+	end,
 }

@@ -18,6 +18,33 @@ return {
 		},
 	},
 	config = function()
+		-- NEU: Diagnostik-Design (Fehlermeldungen neben dem Code)
+		vim.diagnostic.config({
+			-- 1. Der Text neben dem Code (Virtual Text)
+			virtual_text = {
+				source = "if_many", -- Zeigt Quelle an (z.B. "clangd"), wenn es mehrere gibt
+				prefix = "●", -- Kleiner Punkt vor dem Text
+				-- Alternativ: prefix = '■', '▎', 'x'
+			},
+			-- 2. Zeichen in der Seitenleiste (Signs)
+			signs = true,
+			-- 3. Unterstreichen von Fehlern (Underline)
+			underline = true,
+			-- 4. Soll der Fehler angezeigt werden, während du noch tippst?
+			-- false = Erst beim Speichern oder wenn du kurz aufhörst zu tippen (ruhiger)
+			-- true = Sofort (kann nerven, wenn alles rot blinkt beim Tippen)
+			update_in_insert = false,
+			-- 5. Sortierung: Schlimme Fehler zuerst
+			severity_sort = true,
+		})
+
+		-- Schöne Icons für die Seitenleiste definieren
+		local signs = { Error = "✘", Warn = "▲", Hint = "⚑", Info = "»" }
+		for type, icon in pairs(signs) do
+			local hl = "DiagnosticSign" .. type
+			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+		end
+
 		-- Mason Setup (der Installer)
 		require("mason").setup()
 
@@ -32,6 +59,7 @@ return {
 				"clangd",
 				"pyright",
 				"ts_ls",
+				"texlab",
 			},
 			-- HIER IST DIE ÄNDERUNG: 'handlers' ist jetzt ein Feld innerhalb von setup
 			handlers = {
@@ -54,6 +82,8 @@ return {
 				map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 				map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 				map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
+				-- Zeige Fehler in einem schwebenden Fenster (falls der Text am Rand abgeschnitten ist)
+				map("<leader>d", vim.diagnostic.open_float, "Show [D]iagnostic Error")
 				map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 				map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 				map("K", vim.lsp.buf.hover, "Hover Documentation") -- Neu (einfügen):

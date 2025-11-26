@@ -13,3 +13,15 @@ vim.opt.smartcase = true
 
 -- Clipboard mit System teilen
 vim.opt.clipboard = "unnamedplus"
+
+-- Zeilenumbruch aktivieren
+vim.opt.wrap = true
+
+-- Wörter nicht mitten drin trennen (nur an Leerzeichen etc.)
+vim.opt.linebreak = true
+
+-- Einrückung bei Umbruch beibehalten (WICHTIG für Code)
+vim.opt.breakindent = true
+
+-- Optional: Kleines Symbol anzeigen, wenn eine Zeile umgebrochen ist
+vim.opt.showbreak = "↪ "
