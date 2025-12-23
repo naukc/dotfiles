@@ -1,13 +1,16 @@
 lastupdatecheck: 0
 recentrepos:
     - /Users/dedde/dotfiles
+    - /Users/dedde/projekte/Praxisbericht
+    - /Users/dedde/Projekte/Praxisbericht
+    - /Users/dedde/Library/Mobile Documents/com~apple~CloudDocs/Dedde/Projekte/whatss_simulator
     - /Users/dedde/Library/Mobile Documents/com~apple~CloudDocs/Dedde/Embedded C/Gemini c Tutorial
     - /Users/dedde/Library/Mobile Documents/com~apple~CloudDocs/Dedde/Embedded C/C_Projekte
     - /Users/dedde/Library/Mobile Documents/iCloud~md~obsidian/Documents/obsidian-vault
     - /Users/dedde/Library/Mobile Documents/com~apple~CloudDocs/Dedde/Projekt Grundschule/Klasseneinteilung_Grundschule
 startuppopupversion: 5
 didshowhunkstaginghint: false
-lastversion: 0.56.0
+lastversion: 0.57.0
 customcommandshistory:
     - git remote add origin git@github.com:naukc/C_Tutorial.git
 hidecommandlog: false

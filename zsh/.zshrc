@@ -78,6 +78,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+source $HOME/.zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 plugins=(git fzf zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
@@ -115,9 +116,12 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Mein Super-Update-Befehl
-alias upgrade="echo '🚀 Starte Homebrew Updates...' && brew update && brew upgrade && brew cleanup && echo '🍎 Starte macOS & App Store Updates...' && sudo softwareupdate -i -a && echo '✅ Alles erledigt!'"
+alias upgrade="echo '🚀 Starte Homebrew Updates...' && brew update && brew upgrade && brew cleanup"
 alias ic='cd "$HOME/Library/Mobile Documents/com~apple~CloudDocs"'
 alias ho='cd "$HOME"'
+
+# Vim-Bewegungen in der Kommandozeile aktivieren (Vi-Modus)
+bindkey -v
 
 # Aktivierung von Starship
 eval "$(starship init zsh)"
@@ -193,5 +197,16 @@ co() {
 # Erzwinge Block-Cursor beim Start
 echo -e "\e[2 q"
 
-# Vim-Bewegungen in der Kommandozeile aktivieren (Vi-Modus)
-bindkey -v
+
+# bash script zum erstellen eines neuen C Projekts
+alias newc='~/Dotfiles/Vorlagen/scripts/create_c_project.sh'
+
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
+--color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
+--color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
+--color=selected-bg:#45475A \
+--color=border:#6C7086,label:#CDD6F4"
+
+# Added by Antigravity
+export PATH="/Users/dedde/.antigravity/antigravity/bin:$PATH"
